@@ -6,7 +6,7 @@
 
 # in Fedora and EPEL8 build with docs and tests by default
 %global with_docs 1
-
+%define epoch 2
 # Disable tests on f29/f30 and epel8 for now. 
 # epel8 is missing 2 required packages. 
 # fedora29 and fedora30 have too old pytest
@@ -18,6 +18,7 @@
 
 Name: ansible
 Summary: SSH-based configuration management, deployment, and task execution system
+Epoch: %{epoch}
 Version: 2.9.27
 Release: 1%{?dist}
 
@@ -106,6 +107,7 @@ Requires: python3-pyyaml
 Requires: sshpass
 # needed for json_query filter
 Requires: python3-jmespath
+Obsoletes: ansible-core
 
 %description
 Ansible is a radically simple model-driven configuration management,
@@ -115,6 +117,7 @@ on remote nodes. Extension modules can be written in any language and
 are transferred to managed machines automatically.
 
 %package -n ansible-doc
+Epoch: %{epoch}
 Summary: Documentation for Ansible
 
 %description -n ansible-doc
@@ -128,6 +131,7 @@ are transferred to managed machines automatically.
 This package installs extensive documentation for ansible
 
 %package -n ansible-test
+Epoch: %{epoch}
 Summary: Tool for testing ansible plugin and module code
 Requires: %{name} = %{version}-%{release}
 

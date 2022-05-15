@@ -20,7 +20,7 @@ Name: ansible
 Summary: SSH-based configuration management, deployment, and task execution system
 Epoch: %{epoch}
 Version: 2.9.27
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv3+
 Source0: https://releases.ansible.com/ansible/%{name}-%{version}.tar.gz
@@ -104,7 +104,6 @@ Requires: python3-setuptools
 Requires: python3-six
 Requires: python3-jinja2
 Requires: python3-pyyaml
-Requires: sshpass
 # needed for json_query filter
 Requires: python3-jmespath
 Obsoletes: ansible-core
